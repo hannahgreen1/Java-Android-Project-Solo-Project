@@ -16,4 +16,7 @@ public class ItemList {
         return new ArrayList<Item>(list);
     }
 
+//    Create function to add to list
+//    create function to remove from list
+
 }
