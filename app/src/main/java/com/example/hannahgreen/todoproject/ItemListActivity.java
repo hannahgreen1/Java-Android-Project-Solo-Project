@@ -28,7 +28,6 @@ public class ItemListActivity extends AppCompatActivity {
 
     public void onListItemClick(View listItem) {
         Item item = (Item) listItem.getTag();
-        Log.d("Item Title: ", item.getTitle());
 
         Intent intent = new Intent(this, ItemDetailsActivity.class);
         intent.putExtra("item", item);
