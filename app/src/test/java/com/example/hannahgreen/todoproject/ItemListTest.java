@@ -33,4 +33,15 @@ public class ItemListTest {
         assertEquals(2, itemList.listSize());
     }
 
+//    @Test
+//    public void canEditItemInList(){
+//        ItemList itemList = new ItemList();
+//        Item item = new Item("help", "help");
+//        itemList.editItem(item);
+//        assertEquals();
+//    }
+
+
+
 }
+
