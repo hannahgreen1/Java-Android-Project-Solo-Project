@@ -16,6 +16,7 @@
         android:layout_marginTop="364dp"
         android:clickable="true"
         android:focusable="true"
+        android:onClick="onAddButtonClick"
         app:backgroundTint="@android:color/holo_blue_bright"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"

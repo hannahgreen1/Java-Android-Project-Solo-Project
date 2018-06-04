@@ -45,4 +45,13 @@ public class ItemListActivity extends AppCompatActivity {
 
     }
 
+    public void onAddButtonClick(View listItem) {
+        Item item = (Item) listItem.getTag();
+
+        Intent intent = new Intent(this, AddItemActivity.class);
+        intent.putExtra("item", item);
+        startActivity(intent);
+
+    }
+
 }
