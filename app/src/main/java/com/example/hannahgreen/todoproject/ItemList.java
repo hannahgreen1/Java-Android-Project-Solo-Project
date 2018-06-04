@@ -24,4 +24,9 @@ public class ItemList {
         return getList().size();
     }
 
+    public void removeItem() {
+        list.remove(0);
+    }
+
+
 }

@@ -25,5 +25,12 @@ public class ItemListTest {
        assertEquals(3, itemList.listSize());
     }
 
-    
+    @Test
+    public void canRemoveFromList(){
+        ItemList itemList = new ItemList();
+        itemList.addToList(new Item("go shopping", "need food"));
+        itemList.removeItem();
+        assertEquals(2, itemList.listSize());
+    }
+
 }
