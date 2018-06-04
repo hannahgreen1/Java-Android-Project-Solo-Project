@@ -16,4 +16,12 @@ public class ItemList {
         return new ArrayList<Item>(list);
     }
 
+    public boolean addToList(Item item){
+        return list.add(item);
+    }
+
+    public int listSize(){
+        return getList().size();
+    }
+
 }

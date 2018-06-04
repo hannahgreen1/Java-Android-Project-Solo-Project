@@ -11,4 +11,19 @@ public class ItemListTest {
         ItemList itemList = new ItemList ();
         assertEquals(2, itemList.getList().size());
     }
+
+    @Test
+    public void canGetListSize(){
+        ItemList itemList = new ItemList();
+        assertEquals(2, itemList.listSize());
+    }
+
+    @Test
+    public void canAddToList(){
+        ItemList itemList = new ItemList();
+        itemList.addToList(new Item("meet friend", "meet at 3"));
+       assertEquals(3, itemList.listSize());
+    }
+
+    
 }
