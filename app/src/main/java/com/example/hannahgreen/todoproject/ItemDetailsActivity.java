@@ -16,5 +16,6 @@ public class ItemDetailsActivity extends AppCompatActivity {
        Item item = (Item) intent.getSerializableExtra("item");
         Log.d("ItemActivity: ", item.getTitle());
 
+
     }
 }

@@ -6,10 +6,12 @@ public class Item implements Serializable {
 
     private String title;
     private String notes;
+    private Boolean completed;
 
-    public Item(String title, String notes){
+    public Item(String title, String notes, Boolean completed){
         this.title = title;
         this.notes = notes;
+        this.completed = false;
 
     }
 
@@ -27,5 +29,9 @@ public class Item implements Serializable {
 
     public String setTitle(String title) {
         return this.title = title;
+    }
+
+    public Boolean itemCompleted() {
+      return this.completed = true;
     }
 }
