@@ -36,7 +36,5 @@ public class ItemListActivity extends AppCompatActivity {
 
     }
 
-//    public void onTickBoxClick(View item){
-//
-//    }
+
 }

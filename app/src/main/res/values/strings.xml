@@ -9,4 +9,5 @@
     <string name="action_settings">Settings</string>
     <string name="title_of_item">Title of Item</string>
     <string name="notes">Notes</string>
+    <string name="item_title">item_title</string>
 </resources>
