@@ -15,15 +15,15 @@ public class App extends Application {
         return INSTANCE;
     }
 
-//    @Override
-//    public void onCreate() {
-//        super.onCreate();
-//
-//        this.database = Room.databaseBuilder(getApplicationContext(),
-//                AppDatabase.class, DATABASE_NAME).fallbackToDestructiveMigration().build();
-//
-//        INSTANCE = this;
-//    }
+    @Override
+    public void onCreate() {
+        super.onCreate();
+
+        this.database = Room.databaseBuilder(getApplicationContext(),
+                AppDatabase.class, DATABASE_NAME).fallbackToDestructiveMigration().build();
+
+        INSTANCE = this;
+    }
 
     public AppDatabase getDB() {
         return this.database;
