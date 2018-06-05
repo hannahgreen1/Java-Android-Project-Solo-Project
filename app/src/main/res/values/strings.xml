@@ -12,4 +12,6 @@
     <string name="item_title">item_title</string>
     <string name="delete_button">Delete</string>
     <string name="edit_button">Edit</string>
+    <string name="titleEditText">Title</string>
+    <string name="notesEditText">Notes</string>
 </resources>

@@ -14,8 +14,7 @@ public class Item implements Serializable {
     private String notes;
     private Boolean completed;
 
-    public Item(int id, String title, String notes, Boolean completed){
-        this.id = id;
+    public Item(String title, String notes){
         this.title = title;
         this.notes = notes;
         this.completed = false;
