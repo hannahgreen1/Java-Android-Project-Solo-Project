@@ -9,11 +9,12 @@ import android.widget.ListAdapter;
 import android.widget.TextView;
 
 import java.util.ArrayList;
+import java.util.List;
 
 class ItemListAdapter extends ArrayAdapter<Item> {
 
 
-    public ItemListAdapter(Context context, ArrayList<Item> movies)
+    public ItemListAdapter(Context context, List<Item> movies)
     {
         super(context, 0, movies);
     }

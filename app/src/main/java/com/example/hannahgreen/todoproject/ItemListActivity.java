@@ -10,21 +10,34 @@ import android.view.ViewGroup;
 import android.widget.ListView;
 
 import java.util.ArrayList;
+import java.util.List;
 
 public class ItemListActivity extends AppCompatActivity {
-
+ListView listView;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_item_list);
+        listView = (ListView) findViewById(R.id.list);
 
-        ItemList itemList = new ItemList();
-        ArrayList<Item> list = itemList.getList();
+        new Thread(new Runnable() {
+            @Override
+            public void run() {
+                List<Item> items = App.get().getDB().itemDao().getAll();
+                populateListView(items);
+            }
+        }).start();
+    }
 
-        ItemListAdapter itemAdapter = new ItemListAdapter(this, list);
-        ListView listView = (ListView) findViewById(R.id.list);
-        listView.setAdapter(itemAdapter);
+    private void populateListView(final List<Item> items){
+        runOnUiThread(new Runnable() {
+            @Override
+            public void run() {
+                ItemListAdapter itemAdapter = new ItemListAdapter(getBaseContext(), items);
+                listView.setAdapter(itemAdapter);
+            }
+        });
     }
 
     public void onListItemClick(View listItem) {

@@ -1,13 +1,12 @@
 package com.example.hannahgreen.todoproject;
 
 import android.app.Application;
+import android.arch.persistence.room.Room;
 
 public class App extends Application {
 
     public static App INSTANCE;
     private static final String DATABASE_NAME = "ToDoList";
-    private static final String PREFERENCES = "ToDO.preferences";
-    private static final String KEY_FORCE_UPDATE = "force_update";
 
     private AppDatabase database;
 
