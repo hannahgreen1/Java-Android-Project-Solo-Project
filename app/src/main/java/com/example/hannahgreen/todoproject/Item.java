@@ -18,7 +18,6 @@ public class Item implements Serializable {
         this.title = title;
         this.notes = notes;
         this.completed = false;
-
     }
 
     public String getNotes() {
@@ -37,12 +36,12 @@ public class Item implements Serializable {
         return this.title = title;
     }
 
-    public Boolean isCompleted() {
-      return this.completed = true;
+    public void setCompleted(Boolean value) {
+      this.completed = value;
     }
 
-    public void setCompleted(){
-        this.completed = completed;
+    public Boolean getCompleted() {
+        return completed;
     }
 
     public int getId() {

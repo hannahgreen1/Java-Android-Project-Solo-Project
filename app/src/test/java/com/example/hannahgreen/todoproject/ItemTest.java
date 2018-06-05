@@ -11,7 +11,7 @@ public class ItemTest {
 
     @Before
     public void before(){
-        item = new Item(1, "Go Shopping", "Buy milk, bread, chicken.", false);
+        item = new Item( "Go Shopping", "Buy milk, bread, chicken.");
     }
 
     @Test
@@ -36,8 +36,8 @@ public class ItemTest {
 
     @Test
     public void canGetCompleted(){
-        item.itemCompleted();
-        assertEquals(true, item.itemCompleted());
+        item.setCompleted();
+        assertEquals(true, item.setCompleted());
     }
 
     @Test
