@@ -7,6 +7,7 @@ import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.Toast;
 
 public class AddItemActivity extends AppCompatActivity {
     EditText titleEditText;
@@ -35,6 +36,7 @@ public class AddItemActivity extends AppCompatActivity {
                 Item newItem = new Item(title, notes);
                 Log.d(this.getClass().toString(), "Adding new item: " + newItem.getTitle());
                 App.get().getDB().itemDao().insert(newItem);
+//                Toast.makeText(AddItemActivity.this, R.string.add_item_save, Toast.LENGTH_SHORT).show();
                 goBackToList();
             }
         }).start();
