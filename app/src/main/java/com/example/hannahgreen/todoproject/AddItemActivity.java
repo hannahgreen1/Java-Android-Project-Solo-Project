@@ -22,7 +22,7 @@ public class AddItemActivity extends AppCompatActivity {
         this.titleEditText = findViewById(R.id.titleEditText);
         this.notesEditText = findViewById(R.id.notesEditText);
         this.saveButton = findViewById(R.id.saveButton);
-//        this.cancelButton = findViewById(R.id.);
+        this.cancelButton = findViewById(R.id.cancelButton);
     }
 
 
