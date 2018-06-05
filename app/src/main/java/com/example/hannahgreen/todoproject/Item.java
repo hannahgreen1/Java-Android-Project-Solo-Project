@@ -1,14 +1,20 @@
 package com.example.hannahgreen.todoproject;
 
+import android.arch.persistence.room.PrimaryKey;
+
 import java.io.Serializable;
 
 public class Item implements Serializable {
+
+    @PrimaryKey(autoGenerate = true)
+    private int id;
 
     private String title;
     private String notes;
     private Boolean completed;
 
-    public Item(String title, String notes, Boolean completed){
+    public Item(int id, String title, String notes, Boolean completed){
+        this.id = id;
         this.title = title;
         this.notes = notes;
         this.completed = false;
@@ -33,5 +39,13 @@ public class Item implements Serializable {
 
     public Boolean itemCompleted() {
       return this.completed = true;
+    }
+
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
     }
 }

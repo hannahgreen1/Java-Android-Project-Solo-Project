@@ -8,8 +8,8 @@ public class ItemList {
 
     public ItemList(){
         list = new ArrayList<Item>();
-        list.add(new Item("Plan trip", "book flights, and hotel", false));
-        list.add(new Item("Research things to do", "look up the popular tourist attractions in the area", false));
+        list.add(new Item(1,"Plan trip", "book flights, and hotel", false));
+        list.add(new Item(2, "Research things to do", "look up the popular tourist attractions in the area", false));
     }
 
     public ArrayList<Item> getList() {

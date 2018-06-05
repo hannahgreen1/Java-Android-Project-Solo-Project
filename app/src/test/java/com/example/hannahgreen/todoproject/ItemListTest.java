@@ -21,14 +21,14 @@ public class ItemListTest {
     @Test
     public void canAddToList(){
         ItemList itemList = new ItemList();
-        itemList.addToList(new Item("meet friend", "meet at 3"));
+        itemList.addToList(new Item(1,"meet friend", "meet at 3", false));
        assertEquals(3, itemList.listSize());
     }
 
     @Test
     public void canRemoveFromList(){
         ItemList itemList = new ItemList();
-        itemList.addToList(new Item("go shopping", "need food"));
+        itemList.addToList(new Item(1, "go shopping", "need food", false));
         itemList.removeItem();
         assertEquals(2, itemList.listSize());
     }
