@@ -10,4 +10,6 @@
     <string name="title_of_item">Title of Item</string>
     <string name="notes">Notes</string>
     <string name="item_title">item_title</string>
+    <string name="delete_button">Delete</string>
+    <string name="edit_button">Edit</string>
 </resources>
