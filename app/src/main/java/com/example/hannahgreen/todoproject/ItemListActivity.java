@@ -20,6 +20,7 @@ ListView listView;
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_item_list);
         listView = (ListView) findViewById(R.id.list);
+        Log.d("onCreate: ", "itemList activity");
 
         new Thread(new Runnable() {
             @Override
