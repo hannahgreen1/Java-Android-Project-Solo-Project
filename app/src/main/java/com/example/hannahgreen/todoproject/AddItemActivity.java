@@ -36,7 +36,6 @@ public class AddItemActivity extends AppCompatActivity {
                 Item newItem = new Item(title, notes);
                 Log.d(this.getClass().toString(), "Adding new item: " + newItem.getTitle());
                 App.get().getDB().itemDao().insert(newItem);
-//                Toast.makeText(AddItemActivity.this, R.string.add_item_save, Toast.LENGTH_SHORT).show();
                 goBackToList();
             }
         }).start();

@@ -44,7 +44,7 @@ ListView listView;
     public void onListItemClick(View listItem) {
         Item item = (Item) listItem.getTag();
 
-        Intent intent = new Intent(this, ItemDetailsActivity.class);
+        Intent intent = new Intent(this, AddItemActivity.class);
         intent.putExtra("item", item);
         startActivity(intent);
 
