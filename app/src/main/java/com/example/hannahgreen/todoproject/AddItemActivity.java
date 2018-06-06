@@ -73,11 +73,12 @@ public class AddItemActivity extends AppCompatActivity {
     }
 
     public void onDeleteButtonClick(View view) {
-        final Item itemToDelete = this.item;
+        Intent intent = getIntent();
+        Item item = (Item) intent.getSerializableExtra("item");
+        final Item itemToDelete = item;
         new Thread(new Runnable() {
             @Override
             public void run() {
-                Log.d(this.getClass().toString(), "Deleting item: " + itemToDelete.getTitle());
                 App.get().getDB().itemDao().delete(itemToDelete);
                 goBackToList();
             }
