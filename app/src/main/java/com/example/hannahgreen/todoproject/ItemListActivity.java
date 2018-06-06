@@ -55,9 +55,13 @@ ListView listView;
 
         Intent intent = new Intent(this, CompltedActivity.class);
         intent.putExtra("item", item);
-
+        item.setCompleted(true);
 
         startActivity(intent);
+
+    }
+
+    public void onCheckBoxClick(View listItem){
 
     }
 

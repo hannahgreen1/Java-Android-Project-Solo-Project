@@ -19,6 +19,9 @@ public interface ItemDao {
     @Query("SELECT * FROM item where title = :title")
     Item getByTitle(String title);
 
+    @Query("SELECT * from item where completed = completed")
+    Item getByCompleted();
+
     @Insert
     void insert(Item item);
 
