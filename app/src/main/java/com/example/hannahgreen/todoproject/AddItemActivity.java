@@ -39,11 +39,22 @@ public class AddItemActivity extends AppCompatActivity {
         new Thread(new Runnable() {
             @Override
             public void run() {
+                if(titleEditText.setText(item.getTitle());
+                notesEditText.setText(item.getNotes()); {
+                    String title = titleEditText.getText().toString();
+                    String notes = notesEditText.getText().toString();
+                    Item newItem = new Item(title, notes);
+                    Log.d(this.getClass().toString(), "Updating item: " + newItem.getTitle());
+                    App.get().getDB().itemDao().update(newItem);
+                    goBackToList();
+                }
+                else{
                 String title = titleEditText.getText().toString();
                 String notes = notesEditText.getText().toString();
                 Item newItem = new Item(title, notes);
                 Log.d(this.getClass().toString(), "Adding new item: " + newItem.getTitle());
                 App.get().getDB().itemDao().insert(newItem);
+            }
                 goBackToList();
             }
         }).start();
@@ -56,5 +67,9 @@ public class AddItemActivity extends AppCompatActivity {
 
     public void onCancelButtonClick(View view) {
         this.goBackToList();
+    }
+
+    public void onDeleteButtonClick(View view){
+
     }
 }
