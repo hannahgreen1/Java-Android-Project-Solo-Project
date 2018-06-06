@@ -15,6 +15,7 @@ public class AddItemActivity extends AppCompatActivity {
     EditText notesEditText;
     Button saveButton;
     Button cancelButton;
+    Item item;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -69,7 +70,16 @@ public class AddItemActivity extends AppCompatActivity {
         this.goBackToList();
     }
 
-    public void onDeleteButtonClick(View view){
-
+    public void onDeleteButtonClick(View view) {
+        final Item itemToDelete = this.item;
+        new Thread(new Runnable() {
+            @Override
+            public void run() {
+                Log.d(this.getClass().toString(), "Deleting item: " + itemToDelete.getTitle());
+                App.get().getDB().itemDao().delete(itemToDelete);
+                goBackToList();
+            }
+        }).start();
     }
+
 }
