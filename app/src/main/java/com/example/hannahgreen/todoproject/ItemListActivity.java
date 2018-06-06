@@ -55,6 +55,8 @@ ListView listView;
 
         Intent intent = new Intent(this, CompltedActivity.class);
         intent.putExtra("item", item);
+
+
         startActivity(intent);
 
     }
