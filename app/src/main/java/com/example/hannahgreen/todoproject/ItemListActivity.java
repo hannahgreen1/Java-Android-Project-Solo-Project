@@ -62,7 +62,8 @@ ListView listView;
     }
 
     public void onCheckBoxClick(View listItem){
-
+        Item item = (Item) listItem.getTag();
+        item.setCompleted(true);
     }
 
     public void onAddButtonClick(View listItem) {
