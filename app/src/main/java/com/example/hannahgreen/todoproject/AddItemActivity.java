@@ -3,6 +3,7 @@ package com.example.hannahgreen.todoproject;
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.text.Editable;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
@@ -20,10 +21,17 @@ public class AddItemActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_add_item);
 
+        Intent intent = getIntent();
+        Item item = (Item) intent.getSerializableExtra("item");
+        Log.d("AddItemActivity: ", item.getTitle());
+
         this.titleEditText = findViewById(R.id.titleEditText);
         this.notesEditText = findViewById(R.id.notesEditText);
         this.saveButton = findViewById(R.id.saveButton);
         this.cancelButton = findViewById(R.id.cancelButton);
+
+        titleEditText.setText(item.getTitle());
+        notesEditText.setText(item.getNotes());
     }
 
 
