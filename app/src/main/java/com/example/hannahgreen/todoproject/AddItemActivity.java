@@ -40,13 +40,15 @@ public class AddItemActivity extends AppCompatActivity {
         new Thread(new Runnable() {
             @Override
             public void run() {
-                if(titleEditText.setText(item.getTitle());
-                notesEditText.setText(item.getNotes()); {
-                    String title = titleEditText.getText().toString();
-                    String notes = notesEditText.getText().toString();
-                    Item newItem = new Item(title, notes);
-                    Log.d(this.getClass().toString(), "Updating item: " + newItem.getTitle());
-                    App.get().getDB().itemDao().update(newItem);
+                if (getIntent().hasExtra("item"))
+                {
+                    Intent intent = getIntent();
+                    Item item = (Item) intent.getSerializableExtra("item");
+                    item.setTitle(titleEditText.getText().toString());
+                    item.setNotes(notesEditText.getText().toString());
+
+                    Log.d(this.getClass().toString(), "Updating item: " + item.getTitle());
+                    App.get().getDB().itemDao().update(item);
                     goBackToList();
                 }
                 else{
