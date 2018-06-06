@@ -24,7 +24,6 @@ public class AddItemActivity extends AppCompatActivity {
 
         Intent intent = getIntent();
         Item item = (Item) intent.getSerializableExtra("item");
-        Log.d("AddItemActivity: ", item.getTitle());
 
         this.titleEditText = findViewById(R.id.titleEditText);
         this.notesEditText = findViewById(R.id.notesEditText);
