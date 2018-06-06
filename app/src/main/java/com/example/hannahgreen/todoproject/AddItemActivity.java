@@ -23,23 +23,28 @@ public class AddItemActivity extends AppCompatActivity {
         setContentView(R.layout.activity_add_item);
 
         Intent intent = getIntent();
-        Item item = (Item) intent.getSerializableExtra("item");
+        item = (Item) intent.getSerializableExtra("item");
 
         this.titleEditText = findViewById(R.id.titleEditText);
         this.notesEditText = findViewById(R.id.notesEditText);
         this.saveButton = findViewById(R.id.saveButton);
         this.cancelButton = findViewById(R.id.cancelButton);
 
-        titleEditText.setText(item.getTitle());
-        notesEditText.setText(item.getNotes());
-    }
+        if (item != null){
+            titleEditText.setText(item.getTitle());
+            notesEditText.setText(item.getNotes());
+            }
+
+        }
+
+
 
 
     public void onSaveButtonClick(View listItem) {
         new Thread(new Runnable() {
             @Override
             public void run() {
-                if (getIntent().hasExtra("item"))
+                if (item != null)
                 {
                     Intent intent = getIntent();
                     Item item = (Item) intent.getSerializableExtra("item");
