@@ -4,10 +4,11 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:onClick="onListItemClick">
+    >
 
     <CheckBox
         android:id="@+id/checkBox"
+        android:onClick="onCheckBoxClick"
         android:layout_width="42dp"
         android:layout_height="39dp"
         android:layout_marginEnd="8dp"
@@ -26,7 +27,7 @@
         android:layout_marginEnd="8dp"
         android:layout_marginStart="8dp"
         android:layout_marginTop="8dp"
-        android:onClick="onCheckBoxClick"
+        android:onClick="onListItemClick"
         android:textSize="24sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"

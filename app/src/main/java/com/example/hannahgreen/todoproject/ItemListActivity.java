@@ -7,6 +7,7 @@ import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.CheckBox;
 import android.widget.ListView;
 
 import java.util.ArrayList;
@@ -41,30 +42,43 @@ ListView listView;
         });
     }
 
-    public void onListItemClick(View listItem) {
+    public void onListItemClick(View textView) {
+        View listItem = (View) textView.getParent();
+
         Item item = (Item) listItem.getTag();
 
         Intent intent = new Intent(this, AddItemActivity.class);
+
         intent.putExtra("item", item);
         startActivity(intent);
+    }
+
+    public void onCheckBoxClick(View checkBox){
+        View listItem = (View) checkBox.getParent();
+        final Item item = (Item) listItem.getTag();
+        CheckBox boxClicked = (CheckBox)checkBox;
+        item.setCompleted(boxClicked.isChecked());
+        new Thread(new Runnable() {
+            @Override
+            public void run() {
+                App.get().getDB().itemDao().update(item);
+            }
+        }).start();
 
     }
 
-    public void onCompletedButtonClick(View listItem) {
-        Item item = (Item) listItem.getTag();
+    public void onCompletedButtonClick(View button) {
+//        Item item = (Item) listItem.getTag();
 
         Intent intent = new Intent(this, CompltedActivity.class);
-        intent.putExtra("item", item);
-        item.setCompleted(true);
+//        intent.putExtra("item", item);
+//        item.setCompleted(true);
 
         startActivity(intent);
 
     }
 
-    public void onCheckBoxClick(View listItem){
-        Item item = (Item) listItem.getTag();
-        item.setCompleted(true);
-    }
+
 
     public void onAddButtonClick(View listItem) {
         Item item = (Item) listItem.getTag();
