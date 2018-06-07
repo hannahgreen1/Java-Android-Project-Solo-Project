@@ -28,7 +28,5 @@ public class ItemList {
         list.remove(0);
     }
 
-    public void editItem(Item item){
-        list.set(0, item);
-    }
+
 }

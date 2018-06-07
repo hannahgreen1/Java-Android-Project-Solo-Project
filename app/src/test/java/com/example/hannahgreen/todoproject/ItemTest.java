@@ -35,14 +35,8 @@ public class ItemTest {
     }
 
     @Test
-    public void canGetCompleted(){
-        item.setCompleted();
-        assertEquals(true, item.setCompleted());
-    }
-
-    @Test
     public void canGetId(){
-        assertEquals(1, item.getId());
+        assertEquals(0, item.getId());
     }
 
 
